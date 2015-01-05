@@ -31,3 +31,5 @@ node_modules
 typings
 
 dist/
+.DS_Store
+*~
