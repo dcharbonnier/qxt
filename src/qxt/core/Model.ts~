@@ -1,0 +1,30 @@
+module Wup {
+
+    export class Model extends Evented {
+        protected _id: string;
+
+        constructor(id:string) {
+            super();
+            this._id = id;
+        }
+        get id():string {
+            return this._id;
+        }
+
+        _set(propertyName:string, value:any):void {
+            if(this['_'+propertyName] !== value) {
+                var oldValue = this['_'+propertyName];
+                this['_'+propertyName] = value;
+                this.dispatchEvent({
+                    type: 'change_'+propertyName,
+                    data: {
+                        oldValue : oldValue,
+                        newValue : value
+                    }
+                })
+            }
+        }
+
+
+    }
+}
