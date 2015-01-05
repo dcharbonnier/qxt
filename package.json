@@ -1,19 +1,22 @@
 {
-  "name": "Watchup-js-core",
+  "name": "qxt",
   "version": "0.0.1",
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "grunt test",
+    "postinstall" : "node_modules/.bin/tsd reinstall"
+
   },
-  "author": "",
-  "license": "ISC",
+  "author": "David Charbonnier",
+  "license": "MIT",
   "devDependencies": {
     "chai": "^1.10.0",
     "grunt": "^0.4.5",
     "grunt-mocha-test": "^0.12.4",
     "grunt-typescript": "^0.4.8",
     "mocha": "^2.1.0",
+    "tsd": "^0.6.0-beta.5",
     "typescript": "^1.3.0"
   }
 }
